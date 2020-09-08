@@ -10,7 +10,9 @@
     "start": "mocha --require babel-register --watch",
     "test": "mocha --require babel-register",
     "lint": "eslint src test",
+    "prebuild": "rimraf lib",
     "build": "babel src --out-dir lib --source-maps",
+    "prepublish": "npm run build",
     "postversion": "git push --follow-tags && conventional-github-releaser -p angular"
   },
   "devDependencies": {
@@ -38,7 +40,8 @@
     "eslint-plugin-standard": "^3.1.0",
     "mocha": "^5.2.0",
     "power-assert": "^1.6.0",
-    "prettier": "^1.13.7"
+    "prettier": "^1.13.7",
+    "rimraf": "^2.7.1"
   },
   "optionalDependencies": {},
   "keywords": [
